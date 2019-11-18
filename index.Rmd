@@ -1,6 +1,6 @@
 ---
-title:  "タイトル"
-author: "著者名"
+#title:  "タイトル"
+#author: "著者名"
 site: bookdown::bookdown_site
 output: 
     bookdown::gitbook: default
@@ -8,6 +8,9 @@ output:
       latex_engine: xelatex
       keep_tex: yes
       pandoc_args: --top-level-division=chapter
+      includes: 
+        in_header: preamble.tex
+        after_body: after.tex
 documentclass: bxjsbook
 classoption: xelatex,ja=standard, b5paper
 geometry: no
@@ -17,5 +20,8 @@ geometry: no
 
 本テンプレートは同人誌の原稿を書くためのテンプレートです。
 
+## とてもお世話になったサイト
+
+* [Bookdownによる技術系同人誌執筆](https://teastat.blogspot.com/2019/01/bookdown.html)
 
 

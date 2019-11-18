@@ -24,8 +24,6 @@
 % \usepackage[no]{geometry}
 \usepackage{hyperref}
 \hypersetup{unicode=true,
-            pdftitle={タイトル},
-            pdfauthor={著者名},
             pdfborder={0 0 0},
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
@@ -75,18 +73,33 @@
 
 \setlength{\droptitle}{-2em}
 
-  \title{タイトル}
-    \pretitle{\vspace{\droptitle}\centering\huge}
-  \posttitle{\par}
-    \author{著者名}
-    \preauthor{\centering\large\emph}
-  \postauthor{\par}
+  \title{}
+    \pretitle{\vspace{\droptitle}}
+  \posttitle{}
+    \author{}
+    \preauthor{}\postauthor{}
     \date{}
     \predate{}\postdate{}
   
+\makeatletter
+\def\emptypage@emptypage{%
+    \hbox{}%
+    \thispagestyle{headings}%
+    \newpage%    
+}%
+\def\cleardoublepage{%
+        \clearpage%
+        \if@twoside%
+            \ifodd\c@page%
+                % do nothing
+            \else%
+                \emptypage@emptypage%
+            \fi%
+        \fi%
+    }%
+\makeatother
 
 \begin{document}
-\maketitle
 
 {
 \setcounter{tocdepth}{1}
@@ -98,8 +111,44 @@
 
 本テンプレートは同人誌の原稿を書くためのテンプレートです。
 
-\hypertarget{issyo}{%
-\chapter{第1章}\label{issyo}}
+\hypertarget{ux3068ux3066ux3082ux304aux4e16ux8a71ux306bux306aux3063ux305fux30b5ux30a4ux30c8}{%
+\section{とてもお世話になったサイト}\label{ux3068ux3066ux3082ux304aux4e16ux8a71ux306bux306aux3063ux305fux30b5ux30a4ux30c8}}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://teastat.blogspot.com/2019/01/bookdown.html}{Bookdownによる技術系同人誌執筆}
+\end{itemize}
+
+\hypertarget{setting}{%
+\chapter{設定}\label{setting}}
+
+\hypertarget{setting_japanese}{%
+\section{日本語}\label{setting_japanese}}
+
+\hypertarget{caution}{%
+\chapter{注意事項}\label{caution}}
+
+\begin{itemize}
+\tightlist
+\item
+  奇数ページだと1ページ白紙になるので，偶数ページにしないとだめ
+\end{itemize}
+
+\clearpage
+\vspace*{\stretch{1}}
+\begin{flushright}
+\begin{minipage}{0.5\hsize}
+\begin{description}
+  \item{著者：} 著者名
+  \item{発行：} 2019年11月18日
+  \item{サークル名：} サークル名
+  \item{連絡先：} メールアドレス
+  \item{印刷：} 印刷所名
+\end{description}
+\end{minipage}
+\end{flushright}
+\clearpage
 
 
 \end{document}
