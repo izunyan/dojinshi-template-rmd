@@ -13,12 +13,16 @@ output:
         after_body: after.tex
 documentclass: bxjsbook
 classoption: xelatex,ja=standard, b5paper
-geometry: no
+# geometry: no # rmarkdown 2.x以降では不要
 ---
-
 # はじめに {-#hajimeni}
 
 本テンプレートは同人誌の原稿を書くためのテンプレートです。
+
+## 実行方法
+
+* BuildタブでBuild Book > bookdown::pdf_book
+* Knitでやるとエラーになるよ
 
 ## とてもお世話になったサイト
 
