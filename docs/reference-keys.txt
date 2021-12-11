@@ -1,0 +1,3 @@
+setting
+setting_japanese
+caution

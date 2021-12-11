@@ -9,14 +9,26 @@ classoption: xelatex,ja=standard, b5paper
 
 # はじめに {-#hajimeni}
 
-本テンプレートは同人誌の原稿を書くためのテンプレートです。
+<!-- 表紙画像をここに -->
+<!-- 枠線がつく部分は要検討 -->
 
-## 実行方法
+![](images/cover.png){.cover width="250"}
 
-* BuildタブでBuild Book > bookdown::pdf_book
-* Knitでやるとエラーになるよ
+## 説明 {-}
 
-## とてもお世話になったサイト
+* 同人誌の原稿を書くためのテンプレート
+* Build Bookすればhtmとpdfがそのままできる
+  + htmlはbs4_bookスタイル
+  + pdfは目次から始まり，ページ番号が1から始まる
+
+## 実行方法 {-}
+
+* Buildタブで
+  + Build Book > bookdown::bs4_book
+  + Build Book > bookdown::pdf_book
+* Knitでやるとエラーになるよ！
+
+## とてもお世話になったサイト {-}
 
 * [Bookdownによる技術系同人誌執筆](https://teastat.blogspot.com/2019/01/bookdown.html)
 
