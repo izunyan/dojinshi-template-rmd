@@ -1,4 +1,4 @@
-# (PART) 灰色文字の区切り {-#haiiro}
+# (PART) 前半 {-#zennhann}
 
 # 設定 {#setting}
 

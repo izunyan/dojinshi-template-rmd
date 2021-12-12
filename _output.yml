@@ -2,7 +2,7 @@ bookdown::bs4_book:
   css: bs4_style.css
   theme:
     primary: "#096B72"
-  repo: 
+  repo: https://github.com/izunyan/dojinshi_template.git 
 bookdown::gitbook:
      config:
        sharing:

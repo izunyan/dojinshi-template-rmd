@@ -100,21 +100,51 @@
 \chapter*{はじめに}\label{hajimeni}}
 \addcontentsline{toc}{chapter}{はじめに}
 
-本テンプレートは同人誌の原稿を書くためのテンプレートです。
+\includegraphics[width=2.60417in,height=\textheight]{images/cover.png}
 
-\hypertarget{ux5b9fux884cux65b9ux6cd5}{%
-\section{実行方法}\label{ux5b9fux884cux65b9ux6cd5}}
+\hypertarget{ux8aacux660e}{%
+\section*{説明}\label{ux8aacux660e}}
+\addcontentsline{toc}{section}{説明}
 
 \begin{itemize}
 \tightlist
 \item
-  BuildタブでBuild Book \textgreater{} bookdown::pdf\_book
+  同人誌の原稿を書くためのテンプレート
 \item
-  Knitでやるとエラーになるよ
+  Build Bookすればhtmとpdfがそのままできる
+
+  \begin{itemize}
+  \tightlist
+  \item
+    htmlはbs4\_bookスタイル
+  \item
+    pdfは目次から始まり，ページ番号が1から始まる
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ux5b9fux884cux65b9ux6cd5}{%
+\section*{実行方法}\label{ux5b9fux884cux65b9ux6cd5}}
+\addcontentsline{toc}{section}{実行方法}
+
+\begin{itemize}
+\tightlist
+\item
+  Buildタブで
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Build Book \textgreater{} bookdown::bs4\_book
+  \item
+    Build Book \textgreater{} bookdown::pdf\_book
+  \end{itemize}
+\item
+  Knitでやるとエラーになるよ！
 \end{itemize}
 
 \hypertarget{ux3068ux3066ux3082ux304aux4e16ux8a71ux306bux306aux3063ux305fux30b5ux30a4ux30c8}{%
-\section{とてもお世話になったサイト}\label{ux3068ux3066ux3082ux304aux4e16ux8a71ux306bux306aux3063ux305fux30b5ux30a4ux30c8}}
+\section*{とてもお世話になったサイト}\label{ux3068ux3066ux3082ux304aux4e16ux8a71ux306bux306aux3063ux305fux30b5ux30a4ux30c8}}
+\addcontentsline{toc}{section}{とてもお世話になったサイト}
 
 \begin{itemize}
 \tightlist
@@ -123,7 +153,13 @@
 \end{itemize}
 
 \hypertarget{haiiro}{%
-\part{灰色文字の区切り}\label{haiiro}}
+\part{第1部}\label{haiiro}}
+
+\begin{itemize}
+\tightlist
+\item
+  pdfにするときはここはページ増えるので不要かも
+\end{itemize}
 
 \hypertarget{setting}{%
 \chapter{設定}\label{setting}}
