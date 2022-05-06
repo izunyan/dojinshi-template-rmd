@@ -1,4 +1,7 @@
 book_filename: "dojinshi_template"
 # chapter_name: "ch: " # 自動で章の名前をつける
+repo: https://github.com/izunyan/dojinshi_template.git
 output_dir: "docs"   # githubでweb公開するためにdocsフォルダに変更
-rmd_files: ["index.Rmd", "設定.Rmd", "注意事項.Rmd"] # rmdファイルの順番指定
+rmd_files: ["index.Rmd", 
+            "設定.Rmd", 
+            "注意事項.Rmd"] # rmdファイルの順番指定

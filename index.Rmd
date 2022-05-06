@@ -1,10 +1,14 @@
 ---
+site: bookdown::bookdown_site
 #title:  "タイトル"
 #author: "著者名"
-site: bookdown::bookdown_site
+github-repo: izunyan/dojinshi_template.git
+cover-image: images/cover.png
 documentclass: bxjsbook
 classoption: xelatex,ja=standard, b5paper
 # geometry: no # rmarkdown 2.x以降では不要
+editor_options: 
+  chunk_output_type: console
 ---
 
 <!-- 全体の設定 -->
@@ -25,64 +29,124 @@ options(tibble_opt)
 
 <!-- 全体の設定ここまで -->
 
-# はじめに {#hajimeni .unnumbered}
+# はじめに {-#hajimeni}
 
 <!-- 表紙画像をここに -->
 
-<!-- 枠線がつく部分は要検討 -->
+```{r cover, echo=FALSE, fig.align='center', out.width='50%'}
+# pdf作成時は不要
+knitr::include_graphics("images/cover.png")
+```
 
-![](images/cover.png){.cover width="250"}
+<!-- 枠線がつく部分は要検討 -->
+<!-- ![](images/cover.png){.cover width="250"} -->
+
+* 本webサイトは，<イベント名>にて頒布した[書名](url)のオンラインバージョン
+* こちらは随時updateされていく予定
+
 
 はじめにの文章
 
-## テンプレートの説明 {.unnumbered}
+## テンプレートの説明 {-}
 
--   同人誌の原稿を書くためのテンプレート
+* 同人誌の原稿を書くためのテンプレート
 
--   Build Bookすればhtmとpdfがそのままできる
+* Build Bookすればhtmとpdfがそのままできる
 
-    -   htmlはbs4_bookスタイル
-    -   pdfは目次から始まり，ページ番号が1から始まる
+  + htmlはbs4_bookスタイル
+  + pdfは目次から始まり，ページ番号が1から始まる
 
-### 実行方法 {.unnumbered}
+### 実行方法 {-}
 
--   Buildタブで
+* Buildタブで
+  + Build Book > bookdown::bs4_book
+  + Build Book > bookdown::pdf_book
 
-    -   Build Book > bookdown::bs4_book
-    -   Build Book > bookdown::pdf_book
+* Knitでやるとエラーになるよ！
 
--   Knitでやるとエラーになるよ！
-
-### とてもお世話になったサイト {.unnumbered}
+### とてもお世話になったサイト {-}
 
 -   [Bookdownによる技術系同人誌執筆](https://teastat.blogspot.com/2019/01/bookdown.html)
 
-## 本書の特徴 {.unnumbered}
-
-### 想定読者 {.unnumbered}
-
-### 本書の構成 {#structure .unnumbered}
-
-### 執筆環境 {.unnumbered}
-
--   本書は[bookdown](https://bookdown.org/)にて執筆しました [^index-1]
-
--   RおよびRStudio、パッケージのバージョン
-
-    -   R version 3.6.1
-    -   RStudio version 1.3.1073
-    -   readxl version 1.3.1
-    -   tidyverse version 1.3.0
-
-[^index-1]: <https://bookdown.org/>
-
-## 注意事項など {.unnumbered}
-
--   本書の内容はすべてwindows環境を想定しています。
-
--   この本に書いてある内容は、筆者が学習したことをまとめているものにすぎないため、正常な動作の保証はできません。使用する際は、自己責任でお願いします。
-
-## マークダウンの書式など {.unnumbered}
+### マークダウンの書式など {-}
 
 -   リンクの貼り方　たとえばセクション\@ref(caution)
 -   文字列のリンク→[注意事項](#caution)
+
+
+
+<!-- 以下，同人誌の構成案 -->
+
+## 概要 {-}
+* 本書の目的
+  + 説明
+
+* 本書の内容
+  + 説明
+
+* 執筆動機
+  + 説明
+
+* 今後の展望
+  + 
+
+* 本書の内容は、[githubレポジトリ](url)ですべて公開
+
+## 本書の特徴{-}
+
+* 本書の強み
+  + 
+
+## 想定読者 {-}
+
+* RとRStudioをダウンロードしてPCにインストールまでできることが最低条件
+
+## 各章の紹介 {-}
+
+* \@ref(setting)章では
+
+## 執筆環境 {-}
+
+* 本書は[bookdown](https://bookdown.org/)にて執筆
+
+### RおよびRStudio、パッケージのバージョン {-}
+
+* rstudioだけなぜか表示されないので手動で…
+  + バージョン 2022.02.1+461 Prairie Trillium (desktop)
+
+```{r echo = FALSE}
+library(tidyverse)
+res_si <- 
+   sessioninfo::session_info()
+
+res_si$platform |>
+  stack() |>
+  tibble::as_tibble() |>
+  dplyr::relocate(ind) |>
+  dplyr::mutate(ind = as.character(ind)) |>
+  dplyr::filter(ind %in% c("version", "os", "system", "date", "rstudio")) |>
+  knitr::kable() |>
+  kableExtra::kable_styling(position = "center")
+
+res_si$packages |> 
+  tibble::as_tibble() |> 
+  dplyr::select(package, loadedversion) |> 
+  dplyr::filter(package %in% c("bookdown", "tidyverse")) |>
+  knitr::kable() |>
+  kableExtra::kable_styling(position = "center")
+```
+
+## 注意事項など {-}
+
+* 本書の内容はすべてwindows環境を想定しています。
+
+* この本に書いてある内容は、筆者が学習したことをまとめているものにすぎないため、正常な動作の保証はできません。使用する際は、自己責任でお願いします。
+
+
+## ライセンス {-}
+
+<!-- * 本webサイトは [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) -->
+<!--   + 引用例：やわらかクジラ（2021）『がんばらないデータ加工　Rによるくり返し作業入門　前編』. （サークル名：ヤサイゼリー）, オンライン版:https://izunyan.github.io/gisho12/ -->
+<!--   + ただし，ライセンスの適用は本書での著作部分のみとなり，用いているデータやパッケージや画像などはそれぞれのライセンスに準じる -->
+
+## 関連情報 {-#association}
