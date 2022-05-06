@@ -8,6 +8,7 @@ classoption: xelatex,ja=standard, b5paper
 ---
 
 <!-- 全体の設定 -->
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE,
                       dev = "cairo_pdf", dev.args = list(family = "ipaexg")) # pdfでggplot2の日本語出力に必要な設定→html不可？
@@ -21,50 +22,67 @@ tibble_opt <- list(
 options(tibble_opt)
 
 ```
+
 <!-- 全体の設定ここまで -->
 
-# はじめに {-#hajimeni}
+# はじめに {#hajimeni .unnumbered}
 
 <!-- 表紙画像をここに -->
+
 <!-- 枠線がつく部分は要検討 -->
 
 ![](images/cover.png){.cover width="250"}
 
 はじめにの文章
 
-## テンプレートの説明 {-}
+## テンプレートの説明 {.unnumbered}
 
-* 同人誌の原稿を書くためのテンプレート
-* Build Bookすればhtmとpdfがそのままできる
-  + htmlはbs4_bookスタイル
-  + pdfは目次から始まり，ページ番号が1から始まる
+-   同人誌の原稿を書くためのテンプレート
 
-### 実行方法 {-}
+-   Build Bookすればhtmとpdfがそのままできる
 
-* Buildタブで
-  + Build Book > bookdown::bs4_book
-  + Build Book > bookdown::pdf_book
-* Knitでやるとエラーになるよ！
+    -   htmlはbs4_bookスタイル
+    -   pdfは目次から始まり，ページ番号が1から始まる
 
-### とてもお世話になったサイト {-}
+### 実行方法 {.unnumbered}
 
-* [Bookdownによる技術系同人誌執筆](https://teastat.blogspot.com/2019/01/bookdown.html)
+-   Buildタブで
 
+    -   Build Book > bookdown::bs4_book
+    -   Build Book > bookdown::pdf_book
 
-## 本書の特徴 {-}
-### 想定読者 {-}
-### 本書の構成 {-#structure} 
-### 執筆環境 {-}
-* 本書は[bookdown](https://bookdown.org/)にて執筆しました ^[https://bookdown.org/]
+-   Knitでやるとエラーになるよ！
 
-* RおよびRStudio、パッケージのバージョン
-  + R version 3.6.1
-  + RStudio version 1.3.1073
-  + readxl version 1.3.1
-  + tidyverse version 1.3.0  
+### とてもお世話になったサイト {.unnumbered}
 
-## 注意事項など {-}
-* 本書の内容はすべてwindows環境を想定しています。
+-   [Bookdownによる技術系同人誌執筆](https://teastat.blogspot.com/2019/01/bookdown.html)
 
-* この本に書いてある内容は、筆者が学習したことをまとめているものにすぎないため、正常な動作の保証はできません。使用する際は、自己責任でお願いします。 
+## 本書の特徴 {.unnumbered}
 
+### 想定読者 {.unnumbered}
+
+### 本書の構成 {#structure .unnumbered}
+
+### 執筆環境 {.unnumbered}
+
+-   本書は[bookdown](https://bookdown.org/)にて執筆しました [^index-1]
+
+-   RおよびRStudio、パッケージのバージョン
+
+    -   R version 3.6.1
+    -   RStudio version 1.3.1073
+    -   readxl version 1.3.1
+    -   tidyverse version 1.3.0
+
+[^index-1]: <https://bookdown.org/>
+
+## 注意事項など {.unnumbered}
+
+-   本書の内容はすべてwindows環境を想定しています。
+
+-   この本に書いてある内容は、筆者が学習したことをまとめているものにすぎないため、正常な動作の保証はできません。使用する際は、自己責任でお願いします。
+
+## マークダウンの書式など {.unnumbered}
+
+-   リンクの貼り方　たとえばセクション\@ref(caution)
+-   文字列のリンク→[注意事項](#caution)
