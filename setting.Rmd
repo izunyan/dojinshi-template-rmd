@@ -2,4 +2,12 @@
 
 # 設定 {#setting}
 
+## ggplot{#zu}
+```{r}
+ggplot(mtcars) +
+  geom_point(aes(mpg,disp))
+
+```
+
+
 ## 日本語 {#setting_japanese}
