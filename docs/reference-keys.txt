@@ -1,3 +1,4 @@
 setting
+zu
 setting_japanese
 caution
